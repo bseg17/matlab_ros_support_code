@@ -49,7 +49,7 @@ disp('Getting object goal pose(s)...')
 models = getModels(optns);
 
 % Number of models to pick (you can hard code or randomize)
-n = 1; % n = randi([3 25]);
+n = 3; %n = randi([3 25]);
 
 % Manual Specification of fixed objects (may change from year-to-year)
 rCan1 = [0.4, -0.5, 0.14, -pi/2, -pi 0];
@@ -106,7 +106,7 @@ if strcmp(type,'gazebo')
         if ~ret     % If no errors
 
             % Move to ready position
-            ret = moveToQ('qr');
+            ret = moveToQ('qr',optns);
         end
 
         % Control loop
